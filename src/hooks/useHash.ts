@@ -12,9 +12,7 @@ const useHash = () => {
     };
 
     window.addEventListener("hashchange", onHashChanged);
-    return () => {
-        window.removeEventListener("hashchange", onHashChanged);
-    };
+    return () => window.removeEventListener("hashchange", onHashChanged);
   }, []);
 
   return hash;

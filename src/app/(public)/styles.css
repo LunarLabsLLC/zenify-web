@@ -1,3 +1,51 @@
+header {
+  height: 128px;
+  width: 100%;
+  pointer-events: none;
+}
+header .inner {
+  pointer-events: auto;
+  width: 100%;
+  border-color: transparent;
+  padding: 40px 100px;
+  gap: 28px;
+}
+header .img {
+  max-width: 96px;
+}
+header button svg {
+  height: 24px;
+  width: 24px;
+  margin-bottom: 6px;
+}
+header.popped-up {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+header.popped-up .inner {
+  @apply backdrop-blur-sm border-slate-600;
+  background-color: rgb(0 0 0 / 0.1);
+  border-bottom-width: 1px;
+  padding: 5px 100px;
+}
+header.popped-up button {
+  min-height: 2rem;
+  height: 2rem;
+  padding: 0 8px;
+  border: 0;
+}
+header.popped-up button svg {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 5px;
+}
+header.popped-up h5 {
+  font-size: 1rem;
+  line-height: 1.333rem;
+}
 header a {
   padding: 5px 10px;
   position: relative;

@@ -1,24 +1,48 @@
-import Image from "next/image";
+'use client';
 import Link from "next/link";
-import HeaderLinks from "./HeaderLinks";
+import Image from "next/image";
+import { useRef } from "react";
+import useHash from "@/hooks/useHash";
+import { usePathname } from "next/navigation";
+import { InView } from 'react-intersection-observer';
+import { IoDownloadOutline } from "react-icons/io5";
 
-const Header = () =>
-  <header className="w-full position-absolute sticky top-0 left-0 z-[1] backdrop-blur-sm border-b border-slate-600 bg-black bg-opacity-10">
-    <div className="w-10/12 mx-auto flex flex-row items-center py-10 gap-7">
-      <Link href="/">
-        <Image 
-          src="/img/zenify-logo.png" 
-          width={298} height={62}
-          className="max-w-24"
-          alt="Zenify Logo"
-        />
-      </Link>
+const Header = () => {
+  const currRoute = usePathname() + useHash();
+  const getLink = (route: string, text: string) =>
+    <Link key={route} href={`/${route}`} className={currRoute == `/${route}` ? "active" : ""}
+      onClick={() => window.location.hash = (!route.length || route.charAt(0) !== '#' ? '' : route.substring(1))}
+    ><h5>{text}</h5></Link>;
 
-      <div className="flex w-full items-center justify-center gap-7">
-        <HeaderLinks />
+  const header = useRef<HTMLElement>(null);
+  return <>
+    <InView as="div" threshold={1} rootMargin="1.5px 0px 0px 0px" initialInView={true} fallbackInView={true}
+      onChange={(inView, _) => header.current?.classList.toggle('popped-up', !inView)}></InView>  
 
-        <button className="ml-auto btn btn-outline btn-primary">Download</button>
+    <header ref={header}>
+      <div className="inner flex items-center justify-center">
+        <Link href="/">
+          <Image 
+            src="/img/zenify-logo.png" 
+            width={298} height={62}
+            className="img"
+            alt="Zenify Logo"
+          />
+        </Link>
+
+        {[
+          getLink('', "Home"),
+          getLink("store", "Store"),
+          getLink("partners", "Partners"),
+          getLink("#faq", "FAQ"),
+        ]}
+
+        <button className="ml-auto btn btn-outline btn-primary flex flex-row items-center">
+          <IoDownloadOutline />
+          <span>Download</span>  
+        </button>
       </div>
-    </div>
-  </header>;
+    </header>
+  </>;
+};
 export default Header;
