@@ -1,3 +1,3 @@
 const Features = () =>
-  <section id="features">Features</section>;
+  <section id="features" className="h-screen">Features</section>;
 export default Features;

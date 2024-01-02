@@ -1,3 +1,3 @@
 const FAQ = () =>
-  <section id="faq">FAQ</section>;
+  <section id="faq" className="h-screen">FAQ</section>;
 export default FAQ;

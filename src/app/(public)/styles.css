@@ -1,0 +1,21 @@
+header a {
+  padding: 5px 10px;
+  position: relative;
+}
+header a.active::after {
+	content: '';
+	position: absolute;
+	bottom: 5px;
+	left: 0%;
+	transform: translateX(75%);
+	width: 15px;
+	height: 2px;
+	background-color: var(--fallback-bc,oklch(var(--bc)/1));
+}
+
+footer .links h6 {
+  margin-bottom: 10px
+}
+footer .links a {
+  white-space: nowrap;
+}

@@ -2,26 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Typography (18px base size, 1.333 ratio) */
+/* Headers were modified to match h6 == text-base */
+h1 {
+  @apply font-header;
+  font-size: 4.209rem;
+  line-height: 5.61rem;
+};
+h2 {
+  @apply font-header;
+  font-size: 3.157rem;
+  line-height: 4.209rem;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h3 {
+  @apply font-header;
+  font-size: 2.369rem;
+  line-height: 3.157rem;
+}
+h4 {
+  @apply font-header;
+  font-size: 1.777rem;
+  line-height: 2.369rem;
+}
+h5 {
+  @apply font-header;
+  font-size: 1.333rem;
+  line-height: 1.777rem;
+}
+h6 {
+  @apply font-header;
+  font-size: 1rem;
+  line-height: 1.333rem;
+}
+.text-base {
+  @apply font-body;
+  font-size: 1rem;
+  line-height: 1.333rem;
+}
+p {
+  @apply text-base;
+}
+span {
+  @apply text-base;
+}
+a {
+  @apply text-base hover:text-gray-500;
+  text-decoration: none;
+}
+small {
+  @apply font-body;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+small.smaller {
+  font-size: 0.563rem;
+  line-height: 0.75rem;
+}
+strong {
+  @apply text-base font-important;
+}
+.btn {
+  @apply text-base font-important;
 }
