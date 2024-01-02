@@ -10,17 +10,17 @@ import { IoDownloadOutline } from "react-icons/io5";
 const Header = () => {
   const currRoute = usePathname() + useHash();
   const getLink = (route: string, text: string) =>
-    <Link key={route} href={`/${route}`} className={currRoute == `/${route}` ? "active" : ""}
+    <Link key={route} href={`/${route}`} className={"hidden md:block " + (currRoute == `/${route}` ? "active" : "")}
       onClick={() => window.location.hash = (!route.length || route.charAt(0) !== '#' ? '' : route.substring(1))}
     ><h5>{text}</h5></Link>;
 
   const header = useRef<HTMLElement>(null);
   return <>
-    <InView as="div" threshold={1} rootMargin="1.5px 0px 0px 0px" initialInView={true} fallbackInView={true}
+    <InView as="div" threshold={1} initialInView={true} fallbackInView={true}
       onChange={(inView, _) => header.current?.classList.toggle('popped-up', !inView)}></InView>  
 
     <header ref={header}>
-      <div className="inner flex items-center justify-center">
+      <div className="py-10 px-5 lg:px-24 gap-7 inner flex items-center justify-center">
         <Link href="/">
           <Image 
             src="/img/zenify-logo.png" 

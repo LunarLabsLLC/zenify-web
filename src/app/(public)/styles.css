@@ -3,15 +3,38 @@ header {
   width: 100%;
   pointer-events: none;
 }
+@media (max-width: 832px) {
+  header {
+    height: 96px;
+  }
+  header:not(.popped-up) .inner {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  header h5 {
+    @apply text-shrink;
+  }
+}
 header .inner {
+  @apply py-10 px-5 lg:px-24;
   pointer-events: auto;
   width: 100%;
   border-color: transparent;
-  padding: 40px 100px;
-  gap: 28px;
 }
 header .img {
   max-width: 96px;
+}
+@media (max-width: 640px) {
+  header button {
+    border: 0;
+  }
+  header button svg {
+    height: 24px;
+    width: 24px;
+  }
+  header:not(.popped-up) button span {
+    display: none;
+  }
 }
 header button svg {
   height: 24px;
@@ -29,7 +52,8 @@ header.popped-up .inner {
   @apply backdrop-blur-sm border-slate-600;
   background-color: rgb(0 0 0 / 0.1);
   border-bottom-width: 1px;
-  padding: 5px 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 header.popped-up button {
   min-height: 2rem;
@@ -42,9 +66,12 @@ header.popped-up button svg {
   width: 20px;
   margin-bottom: 5px;
 }
-header.popped-up h5 {
+.text-shrink {
   font-size: 1rem;
   line-height: 1.333rem;
+}
+header.popped-up h5 {
+  @apply text-shrink;
 }
 header a {
   padding: 5px 10px;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { IoDownloadOutline } from "react-icons/io5";
 
 const Footer = () => {
   return <>
@@ -36,7 +37,10 @@ const Footer = () => {
             <a href="https://t.me/">Telegram</a>
           </div>
 
-          <button className="my-auto btn btn-outline btn-primary">Download</button>
+          <button className="my-auto btn btn-outline btn-primary flex flex-row items-center">
+            <IoDownloadOutline className="h-6 w-6 mb-1.5"/>
+            <span>Download</span>  
+          </button>
         </div>
       </div>
 
