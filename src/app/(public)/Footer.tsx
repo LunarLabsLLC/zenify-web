@@ -36,12 +36,12 @@ const Footer = () => {
             <a href="https://t.me/">Telegram</a>
           </div>
 
-          <button className="my-auto btn btn-outline btn-secondary">Download</button>
+          <button className="my-auto btn btn-outline btn-primary">Download</button>
         </div>
       </div>
 
       <div className="flex w-full px-4 py-3 items-start justify-start bg-slate-900">
-        <small>Made with ❤️ by Elaina and Emily. &copy; Copyright {`${new Date().getFullYear()}`}, PinkCloud Studios.</small>
+        <small>Made with 💙 by Elaina and Emily. &copy; Copyright {`${new Date().getFullYear()}`}, PinkCloud Studios.</small>
       </div>
     </footer>
   </>;

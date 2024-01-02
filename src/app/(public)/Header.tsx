@@ -17,7 +17,7 @@ const Header = () =>
       <div className="flex w-full items-center justify-center gap-7">
         <HeaderLinks />
 
-        <button className="ml-auto btn btn-outline btn-secondary">Download</button>
+        <button className="ml-auto btn btn-outline btn-primary">Download</button>
       </div>
     </div>
   </header>;
