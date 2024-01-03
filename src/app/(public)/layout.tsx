@@ -5,6 +5,8 @@ import { Roboto_Condensed } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from './Footer';
 import Header from './Header';
+import Sidebar from './Sidebar';
+import SidebarContent from './SidebarContent';
 
 const roboto = Roboto_Condensed({ subsets: ['latin'], variable: "--font-roboto" });
 const monaspace = localFont({
@@ -70,10 +72,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${monaspace.variable} ${pattanakarn.variable} bg-base-100 min-h-screen flex flex-col items-center justify-center`}>
-        <Header />
-        {children}
-        <Footer />
+      <body className={`${roboto.variable} ${monaspace.variable} ${pattanakarn.variable}`}>
+        <Sidebar
+          barId="sidebar"
+          barClass="flex flex-col items-center text-center p-6 w-3/5 h-full backdrop-filter backdrop-blur-sm backdrop-brightness-[.67]"
+          barContent={<SidebarContent />}
+          className="flex flex-col items-center justify-center w-full h-fit bg-base-100"
+        >
+          <Header />
+          {children}
+          <Footer />
+        </Sidebar>
       </body>
     </html>
   )

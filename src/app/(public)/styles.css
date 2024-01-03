@@ -1,9 +1,64 @@
+/*#region Navlinks*/
+.navlink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navlink.active::after {
+	content: '';
+	position: absolute;
+	bottom: 5px;
+	left: 0%;
+	transform: translateX(75%);
+	width: 15px;
+	height: 2px;
+	background-color: var(--fallback-bc,oklch(var(--bc)/1));
+}
+.navlink svg {
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+/*#endregion*/
+
+/*#region Sidebar*/
+.drawer-toggle[type="checkbox"]:checked ~ .drawer-side > .drawer-overlay {
+  @apply backdrop-filter backdrop-brightness-[.75];
+  background-color: transparent;
+}
+.drawer-side .navlink h5 {
+  font-size: 1rem;
+  line-height: 1.333rem;
+}
+.drawer-side .navlink svg {
+  width: 20px;
+  height: 20px;
+}
+.drawer-side .navlink.active::after {
+  bottom: 2px;
+  left: 0%;
+  transform: translateX(5%);
+}
+@media (max-width: 340px) {
+  .drawer-side button {
+    border: 0;
+  }
+  .drawer-side button svg {
+    height: 24px;
+    width: 24px;
+  }
+  .drawer-side button span {
+    display: none;
+  }
+}
+/*#endregion*/
+
+/*#region Header*/
 header {
   height: 128px;
   width: 100%;
   pointer-events: none;
 }
-@media (max-width: 832px) {
+@media (max-width: 868px) {
   header {
     height: 96px;
   }
@@ -11,8 +66,12 @@ header {
     padding-top: 24px !important;
     padding-bottom: 24px !important;
   }
+  header:not(.popped-up) .navlink svg {
+    display: none;
+  }
   header h5 {
-    @apply text-shrink;
+    font-size: 1rem;
+    line-height: 1.333rem;
   }
 }
 header .inner {
@@ -37,8 +96,8 @@ header .img {
   }
 }
 header button svg {
-  height: 24px;
-  width: 24px;
+  height: 21px;
+  width: 21px;
   margin-bottom: 6px;
 }
 header.popped-up {
@@ -62,35 +121,42 @@ header.popped-up button {
   border: 0;
 }
 header.popped-up button svg {
-  height: 20px;
-  width: 20px;
   margin-bottom: 5px;
 }
-.text-shrink {
-  font-size: 1rem;
-  line-height: 1.333rem;
+header.popped-up .navlink svg {
+  height: 16px;
+  width: 16px;
+  margin-bottom: 2px;
+}
+@media (max-width: 336px)  {
+  header > div {
+    gap: 0 !important;
+  }
+  header.popped-up button span {
+    display: none;
+  }
 }
 header.popped-up h5 {
-  @apply text-shrink;
+  font-size: 1rem;
+  line-height: 1.333rem;
 }
 header a {
   padding: 5px 10px;
   position: relative;
 }
-header a.active::after {
-	content: '';
-	position: absolute;
-	bottom: 5px;
-	left: 0%;
-	transform: translateX(75%);
-	width: 15px;
-	height: 2px;
-	background-color: var(--fallback-bc,oklch(var(--bc)/1));
+header .navlink {
+  @apply hidden md:flex;
 }
+header .navlink svg {
+  margin-right: 7px;
+}
+/*#endregion*/
 
+/*#region Footer*/
 footer .links h6 {
   margin-bottom: 10px
 }
 footer .links a {
   white-space: nowrap;
 }
+/*#endregion*/
