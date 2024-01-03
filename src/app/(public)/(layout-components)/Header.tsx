@@ -9,7 +9,7 @@ import NavLinks from "./NavLinks";
 const Header = () => {
   const header = useRef<HTMLElement>(null);
   return <>
-    <InView as="div" threshold={1} initialInView={true} fallbackInView={true}
+    <InView as="div" className="absolute top-0 left-0" threshold={1} initialInView={true} fallbackInView={true}
       onChange={(inView, _) => header.current?.classList.toggle('popped-up', !inView)}></InView>  
 
     <header ref={header}>
