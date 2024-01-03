@@ -1,4 +1,4 @@
-const Sidebar = (props: { barId: string; barClass: string; barContent: any; className: string; children: any; }) =>
+const Sidebar = (props: { barId: string; barClass?: string; barContent: any; className?: string; children: any; }) => (
   <div className="h-screen overflow-y-scroll">
     <input id={props.barId} type="checkbox" className="drawer-toggle" />
     <nav className="drawer-side md:hidden absolute top-0 left-0 z-[2]">
@@ -12,5 +12,5 @@ const Sidebar = (props: { barId: string; barClass: string; barContent: any; clas
       {props.children}
     </main>
   </div>
-
+);
 export default Sidebar;

@@ -1,10 +1,9 @@
 'use client';
-import Link from "next/link";
-import Image from "next/image";
 import { useRef } from "react";
 import { InView } from 'react-intersection-observer';
 import { FaBars, FaDownload } from "react-icons/fa6";
 import NavLinks from "./NavLinks";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   const header = useRef<HTMLElement>(null);
@@ -18,14 +17,7 @@ const Header = () => {
           <label htmlFor="sidebar" tabIndex={0} className="flex md:hidden expand-btn btn btn-ghost btn-circle">
             <FaBars />
           </label>
-          <Link href="/">
-            <Image 
-              src="/img/zenify-logo.png" 
-              width={298} height={62}
-              className="img"
-              alt="Zenify Logo"
-            />
-          </Link>
+          <Logo href="/" className="img" />
         </div>
 
         <NavLinks />

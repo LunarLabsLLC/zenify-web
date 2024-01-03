@@ -1,17 +1,9 @@
 import NavLinks from './NavLinks';
 import { FaDownload } from 'react-icons/fa6';
-import Link from 'next/link';
-import Image from 'next/image';
+import Logo from '@/components/Logo';
 
 const SidebarContent = () => <>
-  <Link href="/">
-    <Image 
-      src="/img/zenify-logo.png" 
-      width={298} height={62}
-      className="max-w-32 sm:max-w-36 my-4"
-      alt="Zenify Logo"
-    />
-  </Link>
+  <Logo href="/" className="max-w-32 sm:max-w-36 my-4" />
 
   <small>0 Players Online</small>
 
@@ -23,6 +15,5 @@ const SidebarContent = () => <>
     <FaDownload className="h-5 w-5 mb-1.5"/>
     <span>Download</span>  
   </button>
-</>
-
+</>;
 export default SidebarContent;
