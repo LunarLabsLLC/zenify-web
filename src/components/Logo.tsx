@@ -6,9 +6,9 @@ import HashLink from "./HashLink";
 const Logo = (props: { href: Url; linkClass?: string; className?: string; }) => (
   <HashLink href={props.href} className={props.linkClass}>
     <Image 
-      src="/img/client-logo.png" 
+      src="/img/logo.png" 
       width={298} height={62}
-      className={props.className}
+      className={"logo-filter " + props.className}
       alt="Zenify Logo"
     />
   </HashLink>

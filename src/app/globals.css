@@ -82,3 +82,7 @@ strong {
   font-size: inherit;
   line-height: inherit;
 }
+
+.logo-filter {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(88%) saturate(7477%) hue-rotate(252deg) brightness(90%) contrast(90%);
+}
