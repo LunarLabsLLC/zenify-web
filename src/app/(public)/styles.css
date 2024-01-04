@@ -27,8 +27,8 @@
   background-color: transparent;
 }
 .drawer-side .navlink h5 {
-  font-size: 1rem;
-  line-height: 1.333rem;
+  font-size: inherit;
+  line-height: inherit;
 }
 .drawer-side .navlink svg {
   width: 20px;
@@ -58,6 +58,11 @@ header {
   height: 128px;
   width: 100%;
   pointer-events: none;
+  position: -webkit-sticky; /* Safari */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 @media (max-width: 868px) {
   header {
@@ -71,8 +76,8 @@ header {
     display: none;
   }
   header h5 {
-    font-size: 1rem;
-    line-height: 1.333rem;
+    font-size: inherit;
+    line-height: inherit;
   }
   header .navlink.active::after {
     transform: translateX(70%);
@@ -103,13 +108,6 @@ header button svg {
   height: 21px;
   width: 21px;
   margin-bottom: 6px;
-}
-header.popped-up {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
 }
 header.popped-up .inner {
   @apply backdrop-blur-sm border-slate-600;
@@ -144,8 +142,8 @@ header.popped-up .navlink.active::after {
   }
 }
 header.popped-up h5 {
-  font-size: 1rem;
-  line-height: 1.333rem;
+  font-size: inherit;
+  line-height: inherit;
 }
 header a {
   padding: 5px 10px;
