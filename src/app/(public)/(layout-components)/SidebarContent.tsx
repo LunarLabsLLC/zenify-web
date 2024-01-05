@@ -11,7 +11,7 @@ const SidebarContent = () => <>
     <NavLinks />
   </div>  
 
-  <button className="mx-auto btn btn-outline btn-primary flex flex-row flex items-center">
+  <button className="mx-auto btn btn-primary flex flex-row flex items-center">
     <FaDownload className="h-5 w-5 mb-1.5"/>
     <span>Download</span>  
   </button>

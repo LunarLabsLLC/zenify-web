@@ -12,7 +12,7 @@ const Features = () =>
         <InView as="div" className="absolute top-0 left-0 h-full w-full" threshold={.67} initialInView={false} fallbackInView={true}
           onChange={(inView, event) => event.target?.parentElement?.children[1]?.classList.toggle('in-view', inView)}></InView>
 
-        <div className="target w-full h-full flex flex-col items-start justify-start p-8 gap-7 bg-gray-900 bg-opacity-65 rounded-lg">
+        <div className="target w-full h-full flex flex-col items-start justify-start p-8 gap-7 bg-gray-900 bg-opacity-65 rounded-lg in-view">
           <h3 className="text-primary brightness-150">Unique features.</h3>
           <small>Here's a summary of what Zenify provides you with, and what we stand for.</small>
           <HashLink href={""} className="gap-1.5 mt-auto">
@@ -45,7 +45,7 @@ const Card = (props: { icon: JSX.Element; title: string; children: any; href: Ur
     <InView as="div" className="absolute top-0 left-0 h-full w-full" threshold={.67} initialInView={false} fallbackInView={true}
       onChange={(inView, event) => event.target?.parentElement?.children[1]?.classList.toggle('in-view', inView)}></InView>
     
-    <div className="target w-full h-full flex flex-col items-start justify-start p-8 gap-7 bg-gray-900 bg-opacity-65 rounded-lg">
+    <div className="target w-full h-full flex flex-col items-start justify-start p-8 gap-7 bg-gray-900 bg-opacity-65 rounded-lg in-view">
       <h4 className="gap-3 flex flex-row justify-center items-center text-primary brightness-150">{props.icon} {props.title}</h4>
       <small>{props.children}</small>
       <HashLink href={props.href} className="flex flex-row items-center justify-center mt-auto gap-1.5">

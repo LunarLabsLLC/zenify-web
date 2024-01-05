@@ -163,3 +163,9 @@ section {
   @apply text-gradient brightness-125;
 }
 /*#endregion*/
+
+/*#region FAQ*/
+#faq > div > div > div {
+  @apply out-of-view;
+}
+/*#endregion*/

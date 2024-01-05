@@ -27,7 +27,7 @@ const Card = (props: { icon: JSX.Element; title: string; children: any; }) => (
     <InView as="div" className="absolute top-0 left-0 h-full w-full" threshold={.67} initialInView={false} fallbackInView={true}
       onChange={(inView, event) => event.target?.parentElement?.children[1]?.classList.toggle('in-view', inView)}></InView>
     
-    <div className="target">
+    <div className="target in-view">
       {props.icon}
       <h4>{props.title}</h4>
       <small>{props.children}</small>

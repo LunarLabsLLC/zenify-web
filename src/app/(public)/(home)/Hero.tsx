@@ -10,7 +10,7 @@ const Hero = () => (
         Flawless experience.<br/>Download our<br/><span className="text-rainbow">cutting-edge</span><br/>MC client now.
       </h2>
 
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row flex-wrap gap-4">
         <button className="btn btn-primary flex flex-row items-center">
           <FaDownload className="h-5 w-5 mb-1.5"/>
           <span>Download Now!</span>
