@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="flex flex-row flex-wrap justify-center w-full gap-12 md:gap-x-16 lg:gap-x-28 xl:gap-x-40 p-12">
       <Logo href="/" linkClass="my-auto" className="max-w-36" />
 
-      <div className="flex flex-row flex-wrap justify-center gap-12 md:gap-16 lg:gap-28 xl:gap-40">
+      <div className="flex flex-row flex-wrap justify-between gap-12 md:gap-16 lg:gap-28 xl:gap-40">
         <div className="links flex flex-col">
           <h6><b>Links</b></h6>
           <a href="">Privacy Policy</a>

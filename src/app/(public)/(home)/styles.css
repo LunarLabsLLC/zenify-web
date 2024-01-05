@@ -21,6 +21,21 @@
 	text-shadow: none;
 }
 
+.out-of-view {
+  transition: all 0.75s;
+  transform: translateY(40%);
+  opacity: 0;
+}
+.in-view {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+section {
+  min-height: min(1920px, 100vh);
+  height: fit-content;
+}
+
 /*#region Hero*/
 #hero > * {
   z-index: 1;
@@ -66,16 +81,10 @@
 /*#endregion*/
 
 /*#region Why*/
-#why > .inner {
-  transition: all 0.75s;
-  transform: translateY(40%);
-  opacity: 0;
+#why .target {
+  @apply out-of-view;
 }
-#why > .inner.in-view {
-  transform: translateY(0);
-  opacity: 1;
-}
-#why > .inner > div {
+#why .target {
   max-width: 490px;
   display: flex;
   flex-direction: column;
@@ -83,7 +92,7 @@
   justify-content: center;
   gap: 5px;
 }
-#why > .inner > div > svg {
+#why .target > svg {
   @apply text-neutral;
   background-color: #883aaa;
   backdrop-filter: blur(8px);
@@ -96,7 +105,7 @@
   align-items: center;
   justify-content: center;
 }
-#why > .inner > div > h4 {
+#why .target > h4 {
   @apply text-secondary font-bold;
   filter: brightness(80%);
   font-size: 1.555rem;
@@ -104,12 +113,23 @@
   white-space: nowrap;
   text-transform: uppercase;
 }
-#why > .inner > div > small {
+#why .target > small {
   max-width: 75%;
 }
 /*#endregion*/
 
 /*#region Features*/
+#features > div {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  height: fit-content;
+  max-width: 1410px;
+}
+#features > div > div {
+  max-height: 600px;
+}
+#features > div > div .target {
+  @apply out-of-view;
+}
 /*#endregion*/
 
 /*#region FAQ*/
