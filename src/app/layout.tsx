@@ -1,34 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Roboto_Condensed } from 'next/font/google'
+import { Roboto_Condensed, Rubik } from 'next/font/google'
 import localFont from 'next/font/local'
 
 const roboto = Roboto_Condensed({ subsets: ['latin'], variable: "--font-roboto" });
-const monaspace = localFont({
-  src: [
-    {
-      path: '../../public/fonts/MonaspaceNeon-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MonaspaceNeon-Italic.otf',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/MonaspaceNeon-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MonaspaceNeon-BoldItalic.otf',
-      weight: '700',
-      style: 'italic',
-    },
-  ],
-  variable: "--font-monaspace"
-});
+const rubik = Rubik({ subsets: ['latin'], variable: "--font-rubik" });
 const pattanakarn = localFont({
   src: [
     {
@@ -67,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${monaspace.variable} ${pattanakarn.variable}`}>
+      <body className={`${roboto.variable} ${rubik.variable} ${pattanakarn.variable}`}>
         {children}
       </body>
     </html>

@@ -27,11 +27,6 @@ html {
 
 /* Typography (18px base size, 1.333 ratio) */
 /* Headers were modified to match h6 == text-base */
-body {
-  @apply font-body;
-  font-size: 1rem;
-  line-height: 1.333rem;
-}
 h1 {
   @apply font-header;
   font-size: 4.209rem;
@@ -62,17 +57,22 @@ h6 {
   font-size: 1rem;
   line-height: 1.333rem;
 }
+body {
+  @apply font-body;
+  font-size: 1.133rem;
+  line-height: 1.511rem;
+}
 a {
   @apply hover:text-gray-500;
   text-decoration: none;
 }
 small {
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.133rem;
 }
 small.smaller {
-  font-size: 0.563rem;
-  line-height: 0.75rem;
+  font-size: 0.638rem;
+  line-height: 0.85rem;
 }
 strong {
   @apply font-important;

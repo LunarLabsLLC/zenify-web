@@ -11,7 +11,7 @@ const config: Config = {
       fontFamily: {
         important: "var(--font-roboto)",
         header: "var(--font-pattanakarn)",
-        body: "var(--font-monaspace)",
+        body: "var(--font-rubik)",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
