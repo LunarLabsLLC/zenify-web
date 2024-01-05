@@ -36,13 +36,21 @@ section {
   height: fit-content;
 }
 
+
 /*#region Hero*/
+#hero {
+	background-position: fixed;
+	background-size: cover;
+	background-image: url('/img/bg.png');
+	background-repeat: no-repeat;
+  box-shadow: inset 0px 0px 40px 50px oklch(var(--b1));
+}
 #hero > * {
   z-index: 1;
 }
-#hero > .bg-grad {
-  background: linear-gradient(180deg, oklch(var(--p)) 0%, transparent 100%);
-  opacity: 25%;
+#hero > .bg-grad-filter {
+  backdrop-filter: brightness(25%) grayscale(100%) sepia(100%) hue-rotate(215deg) saturate(420%);
+  background: linear-gradient(180deg, oklch(var(--p) / 33.333%) 0%, transparent 115%);
 }
 #hero > img {
   width: 100%;
@@ -81,6 +89,13 @@ section {
 /*#endregion*/
 
 /*#region Why*/
+#why > * {
+  z-index: 1;
+}
+#why > .bg-grad {
+  background: radial-gradient(circle, oklch(var(--p)) 0%, transparent 40%);
+  opacity: 20%;
+}
 #why .target {
   @apply out-of-view;
 }
@@ -124,13 +139,27 @@ section {
   height: fit-content;
   max-width: 1410px;
 }
+@media (max-width: 465px) {
+  #features > div {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
 #features > div > div {
   max-height: 600px;
 }
 #features > div > div .target {
   @apply out-of-view;
 }
-/*#endregion*/
-
-/*#region FAQ*/
+#features > div > div .target svg {
+  width: 2.5rem;
+}
+#features > div > div .target .see-link {
+  transition: none;
+}
+#features > div > div .target .see-link * {
+  transition: none;
+}
+#features > div > div .target .see-link:not(:hover) {
+  @apply text-gradient brightness-125;
+}
 /*#endregion*/

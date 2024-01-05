@@ -2,8 +2,8 @@ import Image from "next/image";
 import { FaDiscord, FaDownload } from "react-icons/fa6";
 
 const Hero = () => (
-  <section id="hero" className="relative w-full flex flex-col-reverse lg:flex-row items-center justify-center gap-8 pt-20 lg:pt-0 px-8 sm:px-16 md:px-28 lg:px-36 xl:px-40">
-    <div className="absolute top-0 left-0 h-full w-full bg-grad" style={{zIndex: 0}}></div>
+  <section id="hero" className="relative w-full flex flex-col-reverse lg:flex-row items-center justify-center gap-8 pt-20 pb-10 lg:pt-0 px-8 sm:px-16 md:px-28 lg:px-36 xl:px-40">
+    <div className="absolute top-0 left-0 h-full w-full bg-grad-filter" style={{zIndex: 0}}></div>
     
     <div className="lg:w-full flex flex-col justify-start gap-6 text-primary font-bold">
       <h2 className="whitespace-nowrap uppercase">
