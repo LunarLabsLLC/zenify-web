@@ -34,7 +34,7 @@ const Footer = () => (
     </div>
 
     <div className="flex flex-col w-full px-4 py-3 items-start bg-black gap-2">
-      <small className="flex flex-row flex-wrap">Made with<FaHeart className="text-secondary mb-0.5 mx-1.5 min-h-3.5 min-w-3.5"/>by Elaina. &copy; Copyright {`${new Date().getFullYear()}`}, PinkCloud Studios.</small>
+      <small className="flex flex-row flex-wrap">Made with<FaHeart className="text-secondary mb-0.5 mx-1.5 min-h-3.5 min-w-3.5"/>by Elaina. &copy; Copyright {`${new Date().getFullYear()}`}, PinkCloud Studios LLC.</small>
     </div>
   </footer>
 );
